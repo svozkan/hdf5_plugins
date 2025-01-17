@@ -12,45 +12,15 @@ To register a filter please contact The HDF Helpdesk with the following informat
 * Short description of the new filter
 * Links to any relevant information including licensing information
 
-The current policy for filter identifier assignment is as follows:
-
- <table>
-  <tr>
-    <th>Filter Identifier Values</th><th>Description</th>
-  </tr>
-  <tr>
-    <td><code>0-255</code></td>
-    <td>These values are reserved for filters predefined and
-         registered by the HDF5 library and of use to the general public.</td>
-  </tr>
-  <tr>
-    <td><code>256-511</code></td>
-    <td>Filter values in this range are intended for testing only and can be
-        temporarily used by any organization. No attempts are made to resolve
-        numbering conflicts, as all definitions are temporary.</td>
-  </tr>
-  <tr>
-    <td><code>512-32,767</code></td>
-    <td>Filter values within this range are designated for filters managed by
-        The HDF Group, but they are nominally requested, developed, and supported
-        by third parties. Please contact the
-        <a href="mailto:help@hdfgroup.org">HDF5 development team</a>
-        to reserve a value or range of values for use by your filters.</td>
-  </tr>
-  <tr>
-    <td><code>32,768-65,535</code></td>
-    <td>Filter values in this range are designated for internal company use or
-        application testing when assessing a feature. The HDF Group does not
-        track or document the use of filters within this range.</td>
-  </tr>
-  </table>
+Here is the current policy regarding filter identifier assignment:
+The filter identifier is designed to be a unique identifier for the filter. Values from `zero` through `32,767` are reserved for filters supported by The HDF Group in the HDF5 library and for filters requested and supported by the 3rd party.
+Values from `32768` to `65535` are reserved for non-distributed uses (e.g., internal company usage) or for application usage when testing a feature. The HDF Group does not track or document the usage of filters with identifiers from this range.
+Please contact the maintainer of a filter for help with the filter/compression support in HDF5.
 
 List of Filters Registered with The HDF Group
 ---------------------------------------------
 |Filter  |Identifier Name |Short Description|
 |--------|----------------|---------------------|
-|257     |<a href="#hzip">hzip</a> |hzip compression used in Silo|
-|258     |<a href="#fpzip">fpzip</a> |Duplicate of 32014 (fpzip, below)|
 |305     |<a href="#lzo">LZO</a> |LZO lossless compression used by PyTables|
 |307     |<a href="#bzip2">BZIP2</a>   |BZIP2 lossless compression used by PyTables|
 |32000   |<a href="#lzf">LZF</a> |LZF lossless compression used by H5Py project|
@@ -85,30 +55,9 @@ List of Filters Registered with The HDF Group
 |32029   |<a href="#trpx">TERSE/PROLIX</a>    |A lossless and fast compression of the diffraction data|
 |32030   |<a href="#ffmpeg">FFMPEG</a>    |A lossy compression filter based on ffmpeg video library|
 
-> [!NOTE] 
-> Please contact the maintainer of a filter for help with the filter/compression support in HDF5.
 
 ## <center>The Filters</center>
 
-<h2 id="hzip">hzip Filter</h2>
-
-#### Filter ID: 257
-
-#### Filter Description:
-hzip is a compression algorithm for lossless compression of structured and unstructured meshes composed of cells with hypercube topology.
-
-#### Filter Information:
-hzip was written by Peter Lindstrom at LLNL, and is based on the algorithm described in the following paper:
-
-Peter Lindstrom and Martin Isenburg, "Lossless Compression of Hexahedral Meshes," IEEE Data Compression Conference, March 2008, 192-201.
-
-https://computing.llnl.gov/projects/hzip
-
-#### Contact Information:
-Mark Miller
-Email: miller86 at llnl dot gov
-
-##
 <h2 id="lzo">LZO Filter</h2>
 
 #### Filter ID: 305
@@ -412,7 +361,7 @@ zfp is a BSD licensed open source C++ library for compressed floating-point arra
 
 https://github.com/LLNL/H5Z-ZFP
 
-For more information see: http://computing.llnl.gov/projects/floating-point-compression/
+For more information see: http://computation.llnl.gov/projects/floating-point-compression/
 
 #### Contact Information:
 
@@ -426,16 +375,14 @@ Email: pl at llnl dot gov
 
 <h2 id="fpzip">fpzip</h2>
 
-#### Filter ID: 32014 (and 258)
+#### Filter ID: 32014
 
 #### Filter Description:
 fpzip is a library for lossless or lossy compression of 2D or 3D floating-point scalar fields. Although written in C++, fpzip has a C interface. fpzip was developed by Peter Lindstrom at LLNL.
 
-Filter number 258 appeared in the Silo headers, but may not have been used in actual HDF5 files.
-
 #### Filter Information:
 
-For more information see: http://computing.llnl.gov/projects/floating-point-compression/
+For more information see: http://computation.llnl.gov/projects/floating-point-compression/
 
 #### Contact Information:
 
