@@ -183,17 +183,17 @@ endif ()
 FILTER_OPTION (ZFP)
 
 # ZSTD filter
-if (WIN32)
-    FILTER_OPTION (ZSTD)
-elseif (APPLE)
-  if (NOT CMAKE_C_COMPILER_ID MATCHES "Intel[Ll][Ll][Vv][Mm]" AND NOT CMAKE_C_COMPILER_ID MATCHES "Intel")
-    FILTER_OPTION (ZSTD)
-  else ()
-    set (ENABLE_ZSTD OFF CACHE BOOL "" FORCE)
-  endif ()
-else ()
-  FILTER_OPTION (ZSTD)
-endif ()
+# if (WIN32)
+    # FILTER_OPTION (ZSTD)
+# elseif (APPLE)
+  # if (NOT CMAKE_C_COMPILER_ID MATCHES "Intel[Ll][Ll][Vv][Mm]" AND NOT CMAKE_C_COMPILER_ID MATCHES "Intel")
+    # FILTER_OPTION (ZSTD)
+  # else ()
+    # set (ENABLE_ZSTD OFF CACHE BOOL "" FORCE)
+  # endif ()
+# else ()
+  # FILTER_OPTION (ZSTD)
+# endif ()
 
 #-----------------------------------------------------------------------------
 # Dashboard and Testing Settings
